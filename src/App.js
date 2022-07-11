@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import InputPlanets from './components/InputPlanets';
+import InputPlanetsName from './components/InputPlanetsName';
+import InputPlanetsNumber from './components/inputPlanetsNumber';
 import Table from './components/Table';
 import ContextProvider from './context/ContextProvider';
 
 function App() {
   return (
     <ContextProvider>
-      <InputPlanets />
+      <InputPlanetsNumber />
+      <InputPlanetsName />
       <Table />
     </ContextProvider>
   );

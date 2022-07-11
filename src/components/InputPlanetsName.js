@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { Context } from '../context/ContextProvider';
 
-function InputPlanets() {
+function InputPlanetsName() {
   const { filterData, setFilterData } = useContext(Context);
-  console.log(setFilterData);
   return (
     <div>
       <input
@@ -17,4 +16,4 @@ function InputPlanets() {
   );
 }
 
-export default InputPlanets;
+export default InputPlanetsName;
