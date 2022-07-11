@@ -6,7 +6,7 @@ export const Context = createContext();
 
 function ContextProvider({ children }) {
   const [data, setData] = useState([]);
-  // const [filterData, setFilterData] = useState({ name: '' });
+  const [filterData, setFilterData] = useState({ name: '' });
 
   // REQUISIÇÃO API
   useEffect(() => {
@@ -19,7 +19,7 @@ function ContextProvider({ children }) {
   }, []);
 
   return (
-    <Context.Provider value={ data }>
+    <Context.Provider value={ { data, filterData, setFilterData } }>
       { children }
     </Context.Provider>
   );
