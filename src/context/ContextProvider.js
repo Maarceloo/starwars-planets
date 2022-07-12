@@ -24,15 +24,29 @@ function ContextProvider({ children }) {
     setFilterByNumericValues([...filterByNumericValues, filter]);
   };
 
+  // REMOVE TODOS FILTROS
+  const removeAll = () => setFilterByNumericValues([]);
+
+  // REMOVE ITEM DE FILTROS
+  const filterRemove = (column) => {
+    const newFilters = filterByNumericValues.filter((filtro) => filtro.column !== column);
+    setFilterByNumericValues(newFilters);
+  };
+
+  const value = {
+    data,
+    filterData,
+    setFilterData,
+    filterByNumericValues,
+    filterRemove,
+    setFilterByNumericValues,
+    filterNumeric,
+    removeAll,
+  };
+
   return (
     <Context.Provider
-      value={ {
-        data,
-        filterData,
-        setFilterData,
-        filterByNumericValues,
-        setFilterByNumericValues,
-        filterNumeric } }
+      value={ { value } }
     >
       { children }
     </Context.Provider>

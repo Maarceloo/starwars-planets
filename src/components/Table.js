@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Context } from '../context/ContextProvider';
 
 function Table() {
-  const { data, filterData, filterByNumericValues } = useContext(Context);
+  const { value: { data, filterData, filterByNumericValues } } = useContext(Context);
 
   const filterName = () => data
     .filter((planeta) => planeta.name.includes(filterData.name));
@@ -40,9 +40,9 @@ function Table() {
             <th>Climate</th>
             <th>Gravity</th>
             <th>Terrain</th>
-            <th>Superface Water</th>
+            <th>Surface Water</th>
             <th>Population</th>
-            <th>Filmes</th>
+            <th>Films</th>
             <th>Created</th>
             <th>Edited</th>
             <th>Url</th>
